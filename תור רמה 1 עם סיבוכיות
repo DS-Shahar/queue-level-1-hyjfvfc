@@ -1,0 +1,104 @@
+import java.util.*;
+public class Main
+{
+public static Queue <Integer> copyQ(Queue <Integer> q){
+    Queue <Integer> h= new Queue<Integer>();
+    Queue <Integer> p= new Queue<Integer>();
+        while(!q.isEmpty()){
+            p.insert(q.head());
+            h.insert(q.remove());}
+            
+            while (!p.isEmpty()) {
+             q.insert(p.remove());   }
+                
+         return h; } 
+סיבוכיות זמן ריצה של תרגיל 1: 𝑂(𝑛)        
+    
+ public static boolean isIn(Queue <Integer> q,int x){
+     Queue <Integer> q2=copyQ(q);
+     while(!q2.isEmpty()){
+         int a=q2.remove();
+           if(a==x) 
+               return true;
+     }
+     return false;
+}
+סיבוכיות זמן ריצה : 𝑂(𝑛) 
+public static double avg(Queue <Integer> q){
+    Queue <Integer> q2=copyQ(q);
+    double count=0;
+    double sum=0;
+    while(!q2.isEmpty()){
+         int a=q2.remove();
+         sum+=a;
+         count++;
+    }
+return sum/count;}
+סיבוכיות זמן ריצה : 𝑂(𝑛)
+public static int div(Queue <Integer> q, int num){ 
+    Queue <Integer> q2=copyQ(q);
+    int count=0;
+     while(!q2.isEmpty()){
+          int a=q2.remove();
+           if(num%a==0&&a != 0) 
+               count++;
+     }
+return count;}
+סיבוכיות זמן ריצה : 𝑂(𝑛)
+
+public static boolean ex4(Queue <Integer> q,Queue <Integer> k){
+   Queue <Integer> q2=copyQ(q);
+    while(!q2.isEmpty()){
+          int a=q2.remove();
+          if(div(k,a)>0)
+              return true;
+          }
+    return false;
+}
+סיבוכיות זמן ריצה : 𝑂(𝑛*m)
+מכיוון שהםעולה רצה N Pפעמיים ו ועוברת על פעולה DIV M פעמיים 
+public static boolean ex5(Queue <Integer> q, int num){ 
+    Queue <Integer> q2=copyQ(q);
+    int count=0;
+    while(!q2.isEmpty()){
+        int a=q2.remove();
+         if (a == num) {
+            count++;
+            if (count > 1) {
+                return true; 
+            }}
+        else {
+            count = 0; 
+        }
+        }
+        return false;}
+   סיבוכיות זמן ריצה : 𝑂(𝑛)     
+    
+
+static Scanner reader = new Scanner(System.in);
+public static void main(String []args){
+    Queue <Integer> q= new Queue<Integer>();
+    q.insert(3);
+    q.insert(3);
+    q.insert(6);
+    q.insert(11);
+    q.insert(2);
+    Queue <Integer> k= new Queue<Integer>(); 
+    q.insert(4);
+    q.insert(2);
+    q.insert(6);
+    q.insert(2);
+    q.insert(1);
+   System.out.println(isIn(q,5));
+   System.out.println(q);
+   System.out.println(avg(q));
+   System.out.println(div(q,3));
+   System.out.println(ex4(q,k));
+   System.out.println(ex5(q,3));
+}
+
+שאלה 11:
+מה הפעולה מבצעת: הפעולה בודקת אם 
+Xנמצא בתור אם כן היא מוחקת אותו משאירה את שאר התור אותו דבר
+בסוף הפעולה התור יהיה אותו דבר חוץ מהאיבר שהוציאו
+}
