@@ -55,8 +55,7 @@ public static boolean ex4(Queue <Integer> q,Queue <Integer> k){
           }
     return false;
 }
-סיבוכיות זמן ריצה : 𝑂(𝑛*m)
-מכיוון שהםעולה רצה N Pפעמיים ו ועוברת על פעולה DIV M פעמיים 
+סיבוכיות זמן ריצה : 𝑂(𝑛2) 
 public static boolean ex5(Queue <Integer> q, int num){ 
     Queue <Integer> q2=copyQ(q);
     int count=0;
